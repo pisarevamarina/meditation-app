@@ -24,13 +24,25 @@ const app = () => {
     if (song.paused) {
       song.play();
       video.play();
-      playButton.src = "/svg/pause.svg";
+      playButton.src = "./svg/pause.svg";
     } else {
       song.pause();
       video.pause();
-      playButton.src = "/svg/play.svg";
+      playButton.src = "./svg/play.svg";
     }
   };
+
+  // const checkPlaying = song => {
+  //   if (song.paused) {
+  //     song.play();
+  //     video.play();
+  //     play.src = "./svg/pause.svg";
+  //   } else {
+  //     song.pause();
+  //     video.pause();
+  //     play.src = "./svg/play.svg";
+  //   }
+  // };
 
   //слушатель на кнопки выбора мелодии 
   soundsButton.forEach((button) => {
