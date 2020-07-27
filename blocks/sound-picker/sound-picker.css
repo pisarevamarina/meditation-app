@@ -21,6 +21,7 @@
   @media screen and (max-width: 490px) {
     .sound-picker{
       width: 100%;
+      justify-content: space-evenly;
      
       
     }
