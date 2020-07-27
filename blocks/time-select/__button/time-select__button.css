@@ -1,0 +1,27 @@
+.time-select__button {
+    color: white;
+    width: 30%;
+    height: 10%;
+    background: none;
+    border: 1px solid white;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 20px;
+    transition: all 0.5s ease;
+  }
+  
+  .time-select__button:hover {
+    color: grey;
+    background: whitesmoke;
+  }
+
+
+  @media screen and (max-width: 730px) {
+    .time-select__button{
+      max-width: 30%;
+      max-height: 30%;
+      min-width: 80px;
+      min-height: 80px;
+      
+    }
+  }

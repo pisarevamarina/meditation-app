@@ -1,0 +1,27 @@
+@import url(__button/sound-picker__button.css);
+@import url(__pic/sound-picker__pic.css);
+
+.sound-picker{
+    height: 80%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 730px) {
+    .sound-picker {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 50%;
+    }
+  }
+
+  @media screen and (max-width: 490px) {
+    .sound-picker{
+      width: 100%;
+     
+      
+    }
+  }

@@ -1,13 +1,13 @@
 const app = () => {
-  const song = document.querySelector(".player-container__song");
-  const playButton = document.querySelector(".play");
-  const outline = document.querySelector(".moving-outline circle");
-  const video = document.querySelector(".video-container video");
+  const song = document.querySelector('.player-container__song');
+  const playButton = document.querySelector('.play');
+  const outline = document.querySelector('.moving-outline circle');
+  const video = document.querySelector('.video-container video');
 
-  const soundsButton = document.querySelectorAll(".sound-picker__button");
+  const soundsButton = document.querySelectorAll('.sound-picker__button');
 
-  const timeDisplay = document.querySelector(".player-container__time");
-  const timeSelect = document.querySelectorAll(".time-select__button");
+  const timeDisplay = document.querySelector('.player-container__time');
+  const timeSelect = document.querySelectorAll('.time-select__button');
 
   //  длина круга
   const outlineLength = outline.getTotalLength();
@@ -20,51 +20,39 @@ const app = () => {
   outline.style.strokeDasharray = outlineLength;
 
   //ф-я воспроизведения мелодии, установки паузы, смены вида кнопки
-  const checkPlaying = (song) => {
+  const checkPlaying = song => {
     if (song.paused) {
       song.play();
       video.play();
-      playButton.src = "./svg/pause.svg";
+      playButton.src = './svg/pause.svg';
     } else {
       song.pause();
       video.pause();
-      playButton.src = "./svg/play.svg";
+      playButton.src = './svg/play.svg';
     }
   };
 
-  // const checkPlaying = song => {
-  //   if (song.paused) {
-  //     song.play();
-  //     video.play();
-  //     play.src = "./svg/pause.svg";
-  //   } else {
-  //     song.pause();
-  //     video.pause();
-  //     play.src = "./svg/play.svg";
-  //   }
-  // };
-
   //слушатель на кнопки выбора мелодии 
-  soundsButton.forEach((button) => {
-    button.addEventListener("click", function () {
+  soundsButton.forEach(button => {
+    button.addEventListener('click', function () {
       //пути к мелодии и видео из атрибуты каждой кнопки 
       //присваиваем текущей мелодии
-      song.src = this.getAttribute("data-sound"); 
-      video.src = this.getAttribute("data-video");
+      song.src = this.getAttribute('data-sound'); 
+      video.src = this.getAttribute('data-video');
       checkPlaying(song);
     });
   });
 
   //обработчки на кнопку плэй
-  playButton.addEventListener("click", () => {
+  playButton.addEventListener('click', () => {
     checkPlaying(song);
   });
 
   //добавляем обработчики на кнопки с выбором времени
-  timeSelect.forEach((item) => {
-    item.addEventListener("click", function () {
+  timeSelect.forEach(item => {
+    item.addEventListener('click', function () {
       //устанавливаем продолжительность мелодии из значения атрибута
-      songDuration = this.getAttribute("data-time");
+      songDuration = this.getAttribute('data-time');
       //в таймер записываем остаток минут и секунд
       timeDisplay.textContent = `${Math.floor(songDuration / 60)}:${Math.floor(
         songDuration % 60
@@ -90,7 +78,7 @@ const app = () => {
     if (currentTime >= songDuration) {
       song.pause();
       song.currentTime = 0;
-      playButton.src = "./svg/play.svg";
+      playButton.src = './svg/play.svg';
       video.pause();
     }
   };
